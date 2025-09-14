@@ -33,9 +33,3 @@ Enter any city name to get the current temperature and weather description insta
 
 ---
 
-## 👤 Author
-
-**Kannabiran V**  
-🔗 [GitHub](https://github.com/kannabiran-v005)
-
----
