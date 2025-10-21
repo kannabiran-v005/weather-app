@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌦️ Weather Forecast</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #ece9e6, #ffffff);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .weather-container {
+      background-color: #f9f9f9;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    input[type="text"] {
+      padding: 10px 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      width: 250px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-left: 10px;
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #357ABD;
+    }
+
+    #weatherResult {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #444;
+    }
+
+    .emoji {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="weather-container">
+    <h1>🌦️ Weather Forecast</h1>
+    <input type="text" id="cityInput" placeholder="Enter city name" />
+    <button onclick="getWeather()">Get Weather</button>
+    <div id="weatherResult"></div>
+  </div>
+
+  <script>
+    async function getWeather() {
+      const city = document.getElementById('cityInput').value;
+      const apiKey = 'd5e9637ff7d8a16334876d1a84566731'; 
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        
+        if (data.cod !== 200) {
+          document.getElementById('weatherResult').innerHTML = `❌ City not found. Please try again.`;
+          return;
+        }
+
+        const emoji = getWeatherEmoji(data.weather[0].main);
+        const html = `
+          <div class="emoji">${emoji}</div>
+          🌡️ Temp: ${data.main.temp}°C <br>
+          🌤️ Condition: ${data.weather[0].description}
+        `;
+        document.getElementById('weatherResult').innerHTML = html;
+      } catch (error) {
+        document.getElementById('weatherResult').innerHTML = `⚠️ Error fetching weather.`;
+      }
+    }
+
+    function getWeatherEmoji(condition) {
+      const emojiMap = {
+        Clear: '☀️',
+        Clouds: '☁️',
+        Rain: '🌧️',
+        Drizzle: '🌦️',
+        Thunderstorm: '⛈️',
+        Snow: '❄️',
+        Mist: '🌫️'
+      };
+      return emojiMap[condition] || '🌍';
+    }
+  </script>
+</body>
+</html>
