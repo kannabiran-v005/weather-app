@@ -1,35 +1,35 @@
-🔗 [Live Demo](https://storage.googleapis.com/k05_weather_app/index.html)
-
 # 🌦️ Weather App
 
-This is a simple weather forecast web app built using **HTML**, **JavaScript**, and the **OpenWeatherMap API**.  
-Enter any city name to get the current temperature and weather description instantly.
+🔗 **Live Demo:** [https://kannabiran-v005.github.io/weather-app/](https://kannabiran-v005.github.io/weather-app/)
+
+A simple and responsive weather forecast web app built using **HTML**, **CSS**, and **JavaScript**, powered by the **OpenWeatherMap API**.  
+Enter any city name to instantly view its current temperature and weather conditions.
 
 ---
 
 ## 🚀 Features
 
-- 🌍 Real-time weather for any city
-- 🌡️ Displays temperature in Celsius
-- ☁️ Shows weather condition (e.g. cloudy, clear, etc.)
+- 🌍 Real-time weather data for any city  
+- 🌡️ Displays temperature in Celsius  
+- ☁️ Shows weather condition (e.g., clear, cloudy, rainy)  
+- ⚡ Fast and lightweight — runs directly in the browser  
 
 ---
 
-## 📦 Technologies Used
+## 🛠️ Technologies Used
 
-- HTML5 + CSS3
-- JavaScript (Fetch API)
-- [OpenWeatherMap API](https://openweathermap.org/api)
+- **HTML5**  
+- **CSS3**  
+- **JavaScript (Fetch API)**  
+- **OpenWeatherMap API**
 
 ---
 
-## 📁 How to Run
+## 📁 How to Run Locally
 
-1. Clone this repository:
+1. Clone the repository:
    ```bash
    git clone https://github.com/kannabiran-v005/weather-app.git
-2. Open `index.html` in your browser  
-3. Replace `"YOUR_API_KEY"` in the JavaScript section with your OpenWeatherMap API key
-
----
-
+2. Open the folder and locate index.html.
+3. Replace "YOUR_API_KEY" in the JavaScript file with your OpenWeatherMap API key.
+4. Open index.html in your browser to view the app.
