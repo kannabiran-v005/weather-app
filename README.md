@@ -24,12 +24,3 @@ Enter any city name to instantly view its current temperature and weather condit
 - **OpenWeatherMap API**
 
 ---
-
-## 📁 How to Run Locally
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/kannabiran-v005/weather-app.git
-2. Open the folder and locate index.html.
-3. Replace "YOUR_API_KEY" in the JavaScript file with your OpenWeatherMap API key.
-4. Open index.html in your browser to view the app.
